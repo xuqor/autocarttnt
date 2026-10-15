@@ -240,7 +240,7 @@ public class CartController {
 
     private void tell(Minecraft mc, String text) {
         try {
-            mc.player.sendSystemMessage(Component.literal("[AutoCart] " + text));
+            mc.player.displayClientMessage(Component.literal("[AutoCart] " + text), false);
         } catch (Exception ignored) {
         }
     }

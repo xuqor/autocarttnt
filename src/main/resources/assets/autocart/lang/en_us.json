@@ -2,7 +2,7 @@
   "key.autocart.cart": "Auto TNT Cart",
   "key.category.autocart.main": "AutoCart",
   "autocart.screen.title": "AutoCart settings",
-  "autocart.screen.hint": "Click = +1, Shift+Click = -1",
+  "autocart.screen.hint": "Click a button to cycle its value",
   "autocart.screen.done": "Done",
   "autocart.screen.mode_insta": "Mode: Insta-cart (shoot -> rail + cart)",
   "autocart.screen.mode_prerail": "Mode: Pre-Rail (rail -> shoot -> cart)",

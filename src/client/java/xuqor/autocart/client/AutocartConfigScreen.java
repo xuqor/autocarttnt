@@ -28,14 +28,7 @@ public class AutocartConfigScreen extends Screen {
 
         addRenderableWidget(Button.builder(chargeText(), btn -> {
             ModConfig cfg = ModConfig.get();
-            if (Screen.hasShiftDown()) {
-                cfg.chargeTicks--;
-            } else {
-                cfg.chargeTicks++;
-            }
-            if (cfg.chargeTicks < 3) {
-                cfg.chargeTicks = 10;
-            }
+            cfg.chargeTicks++;
             if (cfg.chargeTicks > 10) {
                 cfg.chargeTicks = 3;
             }
@@ -46,16 +39,9 @@ public class AutocartConfigScreen extends Screen {
 
         addRenderableWidget(Button.builder(pitchText(), btn -> {
             ModConfig cfg = ModConfig.get();
-            if (Screen.hasShiftDown()) {
-                cfg.pitchOffset -= 1.0f;
-            } else {
-                cfg.pitchOffset += 1.0f;
-            }
-            if (cfg.pitchOffset < 0.0f) {
-                cfg.pitchOffset = 0.0f;
-            }
+            cfg.pitchOffset += 1.0f;
             if (cfg.pitchOffset > 30.0f) {
-                cfg.pitchOffset = 30.0f;
+                cfg.pitchOffset = 0.0f;
             }
             ModConfig.save();
             btn.setMessage(pitchText());
