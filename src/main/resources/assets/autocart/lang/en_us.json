@@ -1,0 +1,13 @@
+{
+  "key.autocart.cart": "Auto TNT Cart",
+  "key.category.autocart.main": "AutoCart",
+  "autocart.screen.title": "AutoCart settings",
+  "autocart.screen.hint": "Click = +1, Shift+Click = -1",
+  "autocart.screen.done": "Done",
+  "autocart.screen.mode_insta": "Mode: Insta-cart (shoot -> rail + cart)",
+  "autocart.screen.mode_prerail": "Mode: Pre-Rail (rail -> shoot -> cart)",
+  "autocart.screen.charge": "Bow charge: %s ticks",
+  "autocart.screen.pitch": "Head lift: %s deg",
+  "autocart.screen.topface_on": "Only top face: YES",
+  "autocart.screen.topface_off": "Only top face: NO"
+}

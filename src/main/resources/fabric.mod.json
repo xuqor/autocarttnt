@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "autocart",
+	"version": "${version}",
+	"name": "autocart",
+	"description": "Auto TNT minecart PvP: Insta-cart (shoot first, then rail + TNT cart) and Pre-Rail modes. Press C aiming at a block.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/autocart/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"xuqor.autocart.Autocart"
+		],
+		"client": [
+			"xuqor.autocart.client.AutocartClient"
+		],
+		"modmenu": [
+			"xuqor.autocart.client.AutocartModMenu"
+		]
+	},
+	"mixins": [
+		"autocart.mixins.json",
+		{
+			"config": "autocart.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}

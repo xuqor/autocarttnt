@@ -1,0 +1,13 @@
+{
+  "key.autocart.cart": "Авто ТНТ-вагонетка",
+  "key.category.autocart.main": "AutoCart",
+  "autocart.screen.title": "Настройки AutoCart",
+  "autocart.screen.hint": "Клик = +1, Shift+клик = -1",
+  "autocart.screen.done": "Готово",
+  "autocart.screen.mode_insta": "Режим: Insta-cart (выстрел -> рельса + карт)",
+  "autocart.screen.mode_prerail": "Режим: Pre-Rail (рельса -> выстрел -> карт)",
+  "autocart.screen.charge": "Заряд лука: %s тиков",
+  "autocart.screen.pitch": "Подъём головы: %s°",
+  "autocart.screen.topface_on": "Только верхняя грань: ДА",
+  "autocart.screen.topface_off": "Только верхняя грань: НЕТ"
+}
