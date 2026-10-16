@@ -9,5 +9,11 @@
   "autocart.screen.charge": "Bow charge: %s ticks",
   "autocart.screen.pitch": "Head lift: %s deg",
   "autocart.screen.topface_on": "Only top face: YES",
-  "autocart.screen.topface_off": "Only top face: NO"
+  "autocart.screen.topface_off": "Only top face: NO",
+  "autocart.screen.variance": "Tick variance: %s (legit)",
+  "autocart.screen.smooth_on": "Smooth aim: ON",
+  "autocart.screen.smooth_off": "Smooth aim: OFF",
+  "autocart.screen.swing_on": "Hand swing: ON",
+  "autocart.screen.swing_off": "Hand swing: OFF",
+  "autocart.screen.cooldown": "Cooldown between carts: %s ticks"
 }

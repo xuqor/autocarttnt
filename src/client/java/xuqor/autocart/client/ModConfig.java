@@ -22,6 +22,11 @@ public class ModConfig {
     public int chargeTicks = 5;
     public float pitchOffset = 12.0f;
     public boolean onlyTopFace = true;
+    // Легитность: разброс таймингов, плавный прицел, взмах рукой, пауза между запусками.
+    public int tickVariance = 1;
+    public boolean smoothAim = true;
+    public boolean swingHand = true;
+    public int cooldownTicks = 6;
 
     public static synchronized ModConfig get() {
         if (instance == null) {
@@ -77,6 +82,18 @@ public class ModConfig {
         }
         if (pitchOffset > 30.0f) {
             pitchOffset = 30.0f;
+        }
+        if (tickVariance < 0) {
+            tickVariance = 0;
+        }
+        if (tickVariance > 2) {
+            tickVariance = 2;
+        }
+        if (cooldownTicks < 0) {
+            cooldownTicks = 0;
+        }
+        if (cooldownTicks > 20) {
+            cooldownTicks = 20;
         }
     }
 }

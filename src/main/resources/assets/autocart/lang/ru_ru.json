@@ -9,5 +9,11 @@
   "autocart.screen.charge": "Заряд лука: %s тиков",
   "autocart.screen.pitch": "Подъём головы: %s°",
   "autocart.screen.topface_on": "Только верхняя грань: ДА",
-  "autocart.screen.topface_off": "Только верхняя грань: НЕТ"
+  "autocart.screen.topface_off": "Только верхняя грань: НЕТ",
+  "autocart.screen.variance": "Разброс тиков: %s (легит)",
+  "autocart.screen.smooth_on": "Плавный прицел: ДА",
+  "autocart.screen.smooth_off": "Плавный прицел: НЕТ",
+  "autocart.screen.swing_on": "Взмах рукой: ДА",
+  "autocart.screen.swing_off": "Взмах рукой: НЕТ",
+  "autocart.screen.cooldown": "Пауза между картами: %s тиков"
 }
