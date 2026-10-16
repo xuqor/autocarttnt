@@ -87,7 +87,7 @@ public class KnockbackDisplacer {
         // Шлем Rot-пакет ДО пакета атаки, чтобы сервер применил новый yaw к отбросу.
         try {
             if (mc.getConnection() != null) {
-                mc.getConnection().send(new ServerboundMovePlayerPacket.Rot(newYaw, player.getXRot(), player.onGround()));
+                mc.getConnection().send(new ServerboundMovePlayerPacket.Rot(newYaw, player.getXRot(), player.onGround(), player.horizontalCollision));
             }
         } catch (Exception ignored) {
         }
