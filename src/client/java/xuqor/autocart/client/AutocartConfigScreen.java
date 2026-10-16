@@ -16,7 +16,8 @@ public class AutocartConfigScreen extends Screen {
     @Override
     protected void init() {
         int cx = this.width / 2 - 100;
-        int y = 58;
+        int y = 40;
+        int step = 20;
 
         addRenderableWidget(Button.builder(modeText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -24,7 +25,7 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(modeText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
 
         addRenderableWidget(Button.builder(chargeText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -35,7 +36,7 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(chargeText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
 
         addRenderableWidget(Button.builder(pitchText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -46,7 +47,7 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(pitchText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
 
         addRenderableWidget(Button.builder(topFaceText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -54,7 +55,7 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(topFaceText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
 
         addRenderableWidget(Button.builder(varianceText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -65,7 +66,7 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(varianceText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
 
         addRenderableWidget(Button.builder(smoothText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -73,7 +74,7 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(smoothText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
 
         addRenderableWidget(Button.builder(swingText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -81,7 +82,7 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(swingText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
 
         addRenderableWidget(Button.builder(cooldownText(), btn -> {
             ModConfig cfg = ModConfig.get();
@@ -97,7 +98,65 @@ public class AutocartConfigScreen extends Screen {
             ModConfig.save();
             btn.setMessage(cooldownText());
         }).bounds(cx, y, 200, 20).build());
-        y += 22;
+        y += step;
+
+        addRenderableWidget(Button.builder(kbEnabledText(), btn -> {
+            ModConfig cfg = ModConfig.get();
+            cfg.kbEnabled = !cfg.kbEnabled;
+            ModConfig.save();
+            btn.setMessage(kbEnabledText());
+        }).bounds(cx, y, 200, 20).build());
+        y += step;
+
+        addRenderableWidget(Button.builder(kbAngleText(), btn -> {
+            ModConfig cfg = ModConfig.get();
+            if (cfg.kbAngle < 15) {
+                cfg.kbAngle = 15;
+            } else if (cfg.kbAngle < 30) {
+                cfg.kbAngle = 30;
+            } else if (cfg.kbAngle < 45) {
+                cfg.kbAngle = 45;
+            } else if (cfg.kbAngle < 60) {
+                cfg.kbAngle = 60;
+            } else if (cfg.kbAngle < 90) {
+                cfg.kbAngle = 90;
+            } else {
+                cfg.kbAngle = 15;
+            }
+            ModConfig.save();
+            btn.setMessage(kbAngleText());
+        }).bounds(cx, y, 200, 20).build());
+        y += step;
+
+        addRenderableWidget(Button.builder(kbCooldownText(), btn -> {
+            ModConfig cfg = ModConfig.get();
+            if (cfg.kbCooldownTicks <= 0) {
+                cfg.kbCooldownTicks = 5;
+            } else if (cfg.kbCooldownTicks <= 5) {
+                cfg.kbCooldownTicks = 10;
+            } else if (cfg.kbCooldownTicks <= 10) {
+                cfg.kbCooldownTicks = 20;
+            } else {
+                cfg.kbCooldownTicks = 0;
+            }
+            ModConfig.save();
+            btn.setMessage(kbCooldownText());
+        }).bounds(cx, y, 200, 20).build());
+        y += step;
+
+        addRenderableWidget(Button.builder(kbDirectionText(), btn -> {
+            ModConfig cfg = ModConfig.get();
+            cfg.kbDirection = switch (cfg.kbDirection) {
+                case RIGHT -> ModConfig.KbDirection.ALTERNATE;
+                case ALTERNATE -> ModConfig.KbDirection.RANDOM;
+                case RANDOM -> ModConfig.KbDirection.STRAFE;
+                case STRAFE -> ModConfig.KbDirection.LEFT;
+                default -> ModConfig.KbDirection.RIGHT;
+            };
+            ModConfig.save();
+            btn.setMessage(kbDirectionText());
+        }).bounds(cx, y, 200, 20).build());
+        y += step;
 
         addRenderableWidget(Button.builder(Component.translatable("autocart.screen.done"), btn -> onClose())
                 .bounds(cx, y, 200, 20).build());
@@ -106,8 +165,8 @@ public class AutocartConfigScreen extends Screen {
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         super.render(graphics, mouseX, mouseY, partialTick);
-        graphics.drawCenteredString(this.font, this.title, this.width / 2, 30, 0xFFFFFF);
-        graphics.drawCenteredString(this.font, Component.translatable("autocart.screen.hint"), this.width / 2, 45, 0xA0A0A0);
+        graphics.drawCenteredString(this.font, this.title, this.width / 2, 14, 0xFFFFFF);
+        graphics.drawCenteredString(this.font, Component.translatable("autocart.screen.hint"), this.width / 2, 27, 0xA0A0A0);
     }
 
     @Override
@@ -149,5 +208,27 @@ public class AutocartConfigScreen extends Screen {
 
     private Component cooldownText() {
         return Component.translatable("autocart.screen.cooldown", ModConfig.get().cooldownTicks);
+    }
+
+    private Component kbEnabledText() {
+        return Component.translatable(ModConfig.get().kbEnabled ? "autocart.screen.kb_on" : "autocart.screen.kb_off");
+    }
+
+    private Component kbAngleText() {
+        return Component.translatable("autocart.screen.kb_angle", ModConfig.get().kbAngle);
+    }
+
+    private Component kbCooldownText() {
+        return Component.translatable("autocart.screen.kb_cooldown", ModConfig.get().kbCooldownTicks);
+    }
+
+    private Component kbDirectionText() {
+        return switch (ModConfig.get().kbDirection) {
+            case LEFT -> Component.translatable("autocart.screen.kb_dir_left");
+            case ALTERNATE -> Component.translatable("autocart.screen.kb_dir_alternate");
+            case RANDOM -> Component.translatable("autocart.screen.kb_dir_random");
+            case STRAFE -> Component.translatable("autocart.screen.kb_dir_strafe");
+            default -> Component.translatable("autocart.screen.kb_dir_right");
+        };
     }
 }

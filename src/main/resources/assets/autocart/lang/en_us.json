@@ -1,5 +1,6 @@
 {
   "key.autocart.cart": "Auto TNT Cart",
+  "key.autocart.displace": "Toggle Knockback Displace",
   "key.category.autocart.main": "AutoCart",
   "autocart.screen.title": "AutoCart settings",
   "autocart.screen.hint": "Click a button to cycle its value",
@@ -15,5 +16,14 @@
   "autocart.screen.smooth_off": "Smooth aim: OFF",
   "autocart.screen.swing_on": "Hand swing: ON",
   "autocart.screen.swing_off": "Hand swing: OFF",
-  "autocart.screen.cooldown": "Cooldown between carts: %s ticks"
+  "autocart.screen.cooldown": "Cooldown between carts: %s ticks",
+  "autocart.screen.kb_on": "KB-Displace: ON",
+  "autocart.screen.kb_off": "KB-Displace: OFF",
+  "autocart.screen.kb_angle": "KB flick angle: %s deg",
+  "autocart.screen.kb_cooldown": "KB cooldown: %s ticks",
+  "autocart.screen.kb_dir_left": "KB side: always left",
+  "autocart.screen.kb_dir_right": "KB side: always right",
+  "autocart.screen.kb_dir_alternate": "KB side: alternate",
+  "autocart.screen.kb_dir_random": "KB side: random",
+  "autocart.screen.kb_dir_strafe": "KB side: by A/D"
 }

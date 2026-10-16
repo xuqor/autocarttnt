@@ -27,6 +27,19 @@ public class ModConfig {
     public boolean smoothAim = true;
     public boolean swingHand = true;
     public int cooldownTicks = 6;
+    // Knockback displacement (техника marlowww): флик головой в тик удара.
+    public enum KbDirection {
+        LEFT,
+        RIGHT,
+        ALTERNATE,
+        RANDOM,
+        STRAFE
+    }
+
+    public boolean kbEnabled = false;
+    public int kbAngle = 30;
+    public int kbCooldownTicks = 10;
+    public KbDirection kbDirection = KbDirection.RIGHT;
 
     public static synchronized ModConfig get() {
         if (instance == null) {
@@ -94,6 +107,21 @@ public class ModConfig {
         }
         if (cooldownTicks > 20) {
             cooldownTicks = 20;
+        }
+        if (kbAngle < 5) {
+            kbAngle = 5;
+        }
+        if (kbAngle > 120) {
+            kbAngle = 120;
+        }
+        if (kbCooldownTicks < 0) {
+            kbCooldownTicks = 0;
+        }
+        if (kbCooldownTicks > 40) {
+            kbCooldownTicks = 40;
+        }
+        if (kbDirection == null) {
+            kbDirection = KbDirection.RIGHT;
         }
     }
 }

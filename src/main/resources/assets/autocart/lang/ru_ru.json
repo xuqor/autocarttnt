@@ -1,5 +1,6 @@
 {
   "key.autocart.cart": "Авто ТНТ-вагонетка",
+  "key.autocart.displace": "Knockback Displacement вкл/выкл",
   "key.category.autocart.main": "AutoCart",
   "autocart.screen.title": "Настройки AutoCart",
   "autocart.screen.hint": "Кликай по кнопке чтобы сменить значение",
@@ -15,5 +16,14 @@
   "autocart.screen.smooth_off": "Плавный прицел: НЕТ",
   "autocart.screen.swing_on": "Взмах рукой: ДА",
   "autocart.screen.swing_off": "Взмах рукой: НЕТ",
-  "autocart.screen.cooldown": "Пауза между картами: %s тиков"
+  "autocart.screen.cooldown": "Пауза между картами: %s тиков",
+  "autocart.screen.kb_on": "KB-Displace: ВКЛ",
+  "autocart.screen.kb_off": "KB-Displace: ВЫКЛ",
+  "autocart.screen.kb_angle": "KB угол флика: %s°",
+  "autocart.screen.kb_cooldown": "KB пауза: %s тиков",
+  "autocart.screen.kb_dir_left": "KB сторона: всегда влево",
+  "autocart.screen.kb_dir_right": "KB сторона: всегда вправо",
+  "autocart.screen.kb_dir_alternate": "KB сторона: по очереди",
+  "autocart.screen.kb_dir_random": "KB сторона: рандом",
+  "autocart.screen.kb_dir_strafe": "KB сторона: по A/D"
 }
